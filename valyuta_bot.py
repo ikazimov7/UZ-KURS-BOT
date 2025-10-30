@@ -127,6 +127,13 @@ async def main():
     asyncio.create_task(every_6_hours())
     print("Bot Renderda ishga tushdi")
     await dp.start_polling(bot)
+    
+# Kodning oxiriga, if __name__ == "__main__": dan oldin qo‘shing
 
+@dp.message(Command("update"))
+async def update(m: types.Message):
+    await send_kurs()
+    await m.answer("Kurslar yangilandi!")
+    
 if __name__ == "__main__":
     asyncio.run(main())
