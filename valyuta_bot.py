@@ -117,7 +117,7 @@ async def kurs(m: types.Message):
     txt += f"\nSana: {data[0]['Date']}"
     await m.answer(txt, parse_mode="Markdown")
 
-async def every_6_hours():
+async def every_3_minuts():
     while True:
         await send_kurs()
         await asyncio.sleep(21600)  # 6 soat
