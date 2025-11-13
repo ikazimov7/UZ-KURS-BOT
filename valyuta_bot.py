@@ -120,7 +120,7 @@ async def kurs(m: types.Message):
 async def every_6_hours():
     while True:
         await send_kurs()
-        await asyncio.sleep(180)  # 6 soat
+        await asyncio.sleep(180)  # 3 minut
 
 async def main():
     await init_db()
