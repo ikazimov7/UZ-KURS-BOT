@@ -7,6 +7,10 @@ from aiogram.filters import Command
 from datetime import datetime
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 API_TOKEN = os.getenv("API_TOKEN")
 CBU_API = "https://cbu.uz/uz/arkhiv-kursov-valyut/json/"
 DB = "kurs.db"
@@ -120,7 +124,7 @@ async def kurs(m: types.Message):
 async def every_6_hours():
     while True:
         await send_kurs()
-        await asyncio.sleep(180)  # 3 minut
+        await asyncio.sleep(21_600)  # har 6 soatda
 
 async def main():
     await init_db()

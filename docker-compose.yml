@@ -1,0 +1,14 @@
+services:
+  telegram-bot:
+    build: .
+    env_file:
+      - .env
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'       # Max 25% of one CPU
+          memory: 128M       # Max 128MB RAM
+        reservations:
+          cpus: '0.1'        # Reserve 10% of one CPU
+          memory: 64M        # Reserve 64MB RAM
